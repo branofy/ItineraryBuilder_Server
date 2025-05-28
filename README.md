@@ -197,7 +197,7 @@ This project is licensed under the ISC License.
 
 ## 👥 Authors
 
-- Your Name - Initial work
+- Rajiv Suting - Initial work
 
 ## 🙏 Acknowledgments
 
