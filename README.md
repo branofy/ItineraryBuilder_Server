@@ -56,7 +56,7 @@ JWT_SECRET=jwt_secret
 JWT_EXPIRES_IN=90d
 
 # Security
-ALLOWED_ORIGINS=http://localhost:8800,https://yourdomain.com
+ALLOWED_ORIGINS=http://localhost:8800
 ```
 
 4. Create required directories:
