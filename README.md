@@ -46,17 +46,17 @@ npm install
 ```env
 # Application
 NODE_ENV=development
-PORT=3000
+PORT=8800
 
 # MongoDB Atlas
-MONGO_URL=your_mongodb_atlas_connection_string
+MONGO_URL=mongodb+srv://rajiv:gyvgiZo4pzUBlOP4@rajivdb.cw776ef.mongodb.net/ItineraryBuilder
 
 # JWT
-JWT_SECRET=your_jwt_secret
+JWT_SECRET=jwt_secret
 JWT_EXPIRES_IN=90d
 
 # Security
-ALLOWED_ORIGINS=http://localhost:3000,https://yourdomain.com
+ALLOWED_ORIGINS=http://localhost:8800,https://yourdomain.com
 ```
 
 4. Create required directories:
