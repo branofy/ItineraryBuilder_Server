@@ -9,6 +9,9 @@ const compression = require("compression");
 const { connectDB, gracefulShutdown } = require("./configs/database");
 require("dotenv").config();
 
+const exclusionRoute = require('./routes/exclusionRoute');
+
+
 // Initialize express app
 const app = express();
 
@@ -139,6 +142,10 @@ app.use((req, res) => {
   });
 });
 
+
+app.use('/api/exclusions',exclusionRoute)
+
+
 // Start server function
 const startServer = async () => {
   try {
@@ -153,6 +160,8 @@ const startServer = async () => {
       console.log(`📝 Environment: ${process.env.NODE_ENV}`);
       console.log(`🔒 Security features enabled`);
     });
+
+    
 
     // Handle server errors
     server.on("error", (error) => {
