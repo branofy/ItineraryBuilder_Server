@@ -9,7 +9,8 @@ const compression = require("compression");
 const { connectDB, gracefulShutdown } = require("./configs/database");
 require("dotenv").config();
 
-const exclusionRoute = require('./routes/exclusionRoute');
+const exclusionRoutes = require('./routes/exclusionRoute');
+
 
 
 // Initialize express app
@@ -104,6 +105,9 @@ app.get("/health", (req, res) => {
   });
 });
 
+
+app.use('/api/exclusion', exclusionRoutes);
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
@@ -134,6 +138,7 @@ app.use((err, req, res, next) => {
   }
 });
 
+
 // Handle 404 routes
 app.use((req, res) => {
   res.status(404).json({
@@ -142,8 +147,6 @@ app.use((req, res) => {
   });
 });
 
-
-app.use('/api/exclusions',exclusionRoute)
 
 
 // Start server function
@@ -160,8 +163,9 @@ const startServer = async () => {
       console.log(`📝 Environment: ${process.env.NODE_ENV}`);
       console.log(`🔒 Security features enabled`);
     });
-
     
+
+
 
     // Handle server errors
     server.on("error", (error) => {

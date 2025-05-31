@@ -1,10 +1,10 @@
 const Exclusion = require("../models/Exclusion");
-const mongoose = requie("mongoose");
+const mongoose = require("mongoose");
 
 //get all exclusions
 const getExclusions = async (req, res) => {
-  const exclusions = await Exclusion.find({}).sort({ createdAt: -1 });
-  res.status(200).json(exclusions);
+  const exclusions = await Exclusion.find({}).sort({ createdAt: -1 })
+  res.status(200).json(exclusions)
 };
 
 //get a single exclusion

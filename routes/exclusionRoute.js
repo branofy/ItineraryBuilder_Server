@@ -1,5 +1,4 @@
 const express = require("express");
-const Workout = require("../models/Exclusion");
 
 const {
   getExclusions,
@@ -7,7 +6,7 @@ const {
   createExclusion,
   deleteExclusion,
   updateExclusion,
-} = require("../controller/exclusionController");
+} = require("../controllers/exclusionController");
 
 const router = express.Router();
 
