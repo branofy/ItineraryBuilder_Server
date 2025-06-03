@@ -19,4 +19,3 @@ const getTransfer = async (req, res) => {
 
     return res.status(200).json(await Transfer.findById(id));
 }
-
